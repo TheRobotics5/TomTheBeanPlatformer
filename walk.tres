@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 89.9999, 59.9999, 89.9999, 120.0 ]
+"values": [ 89.9999, 40.0, 89.9999, 140.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("arm:position")
@@ -26,7 +26,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.10376, 14.2357 ), Vector2( 7.84865, 13.4201 ), Vector2( -0.10376, 14.2357 ), Vector2( -7.44442, 13.2162 ) ]
+"values": [ Vector2( -3, 20 ), Vector2( 10.4395, 16.3107 ), Vector2( -3, 20 ), Vector2( -15.8771, 13.7432 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("arm2:position")
@@ -38,7 +38,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.396242, 13.8736 ), Vector2( -7.444, 13.874 ), Vector2( -0.396242, 13.8736 ), Vector2( 7.849, 13.874 ) ]
+"values": [ Vector2( -3, 20 ), Vector2( -15.877, 13.743 ), Vector2( -3, 20 ), Vector2( 7.849, 13.874 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("arm2:rotation_degrees")
@@ -50,7 +50,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 90.0, 120.0, 90.0, 60.0 ]
+"values": [ 90.0, 140.0, 90.0, 45.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("leg:position")
