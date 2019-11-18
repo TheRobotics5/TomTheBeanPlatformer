@@ -19,6 +19,8 @@ func _physics_process(delta):
 		$leg2.flip_h = false
 		$arm.flip_h = false
 		$arm2.flip_h = false
+		$AnimationPlayer.play("walk")
+		
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -150
 		$body.flip_h = true
@@ -26,8 +28,10 @@ func _physics_process(delta):
 		$leg2.flip_h = true
 		$arm.flip_h = true
 		$arm2.flip_h = true
+		$AnimationPlayer.play("walk")
 	else:
 		motion.x= 0
+		$AnimationPlayer.play("idle")
 
 
 	if Input.is_action_pressed("spacebar"):
