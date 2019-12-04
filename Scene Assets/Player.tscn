@@ -12,6 +12,9 @@ extents = Vector2( 7.00897, 22.915 )
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -7.2775, 21.6135 )
@@ -24,15 +27,15 @@ anims/walk = ExtResource( 3 )
 
 [node name="leg2" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -6.4249, 58.0759 )
-rotation = 1.57079
+position = Vector2( -12.134, 58.076 )
+rotation = 1.91986
 scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
 [node name="arm2" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -3, 20 )
-rotation = 1.5708
+position = Vector2( 7.849, 13.874 )
+rotation = 0.785398
 scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
@@ -43,14 +46,42 @@ texture = ExtResource( 5 )
 
 [node name="arm" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -3, 20 )
-rotation = 1.57079
+position = Vector2( -15.8771, 13.7432 )
+rotation = 2.44346
 scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
 [node name="leg" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -6.425, 58.076 )
-rotation = 1.5708
+position = Vector2( -1.05901, 58.076 )
+rotation = 1.22173
 scale = Vector2( 0.135975, 0.0292158 )
+texture = ExtResource( 4 )
+
+[node name="rev_leg" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -12.134, -30.076 )
+rotation = 1.22173
+scale = Vector2( 0.136, 0.029 )
+texture = ExtResource( 4 )
+
+[node name="rev_arm" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -3, 20 )
+rotation = 1.57079
+scale = Vector2( 0.135975, 0.0292158 )
+texture = ExtResource( 4 )
+
+[node name="rev_arm2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -3, 20 )
+rotation = 1.57079
+scale = Vector2( 0.135975, 0.0292158 )
+texture = ExtResource( 4 )
+
+[node name="rev_leg2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0.716, -30.076 )
+rotation = 1.91986
+scale = Vector2( 0.136, 0.029 )
 texture = ExtResource( 4 )
