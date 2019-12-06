@@ -10,6 +10,13 @@ func _ready():
 	$rev_leg2.hide()
 	$rev_arm.hide()
 	$rev_arm2.hide()
+	$rev_body.hide()
+	$body.show()
+	$leg.show()
+	$leg2.show()
+	$arm.show()
+	$arm2.show()
+	$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
 	
@@ -18,33 +25,27 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 150
 		$body.flip_h = false
-		$leg.flip_h = false
-		$leg2.flip_h = false
-		$arm.flip_h = false
-		$arm2.flip_h = false
+		$rev_body.flip_h = false
 		$AnimationPlayer.play("walk")
 		
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -150
 		$body.flip_h = true
-		$leg.flip_h = true
-		$leg2.flip_h = true
-		$arm.flip_h = true
-		$arm2.flip_h = true
+		$rev_body.flip_h = true
 		$AnimationPlayer.play("walk")
 	else:
 		motion.x= 0
-		$AnimationPlayer.stop(true)
-
+		$AnimationPlayer.play("idle")
 
 	if Input.is_action_pressed("spacebar"):
 		if is_on_floor():
 			motion.y = -100
-			$body.flip_v = true
+			$body.hide()
 			$leg.hide()
 			$leg2.hide()
 			$arm.hide()
 			$arm2.hide()
+			$rev_body.show()
 			$rev_leg.show()
 			$rev_leg2.show()
 			$rev_arm.show()
@@ -53,11 +54,12 @@ func _physics_process(delta):
 
 		if is_on_ceiling():
 			motion.y = 100
-			$body.flip_v = false
+			$body.show()
 			$leg.show()
 			$leg2.show()
 			$arm.show()
 			$arm2.show()
+			$rev_body.hide()
 			$rev_leg.hide()
 			$rev_leg2.hide()
 			$rev_arm.hide()
@@ -65,4 +67,3 @@ func _physics_process(delta):
 			grav = 5
 
 	motion = move_and_slide(motion, UP)
-	pass

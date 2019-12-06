@@ -22,10 +22,12 @@ scale = Vector2( 3.61571, 2.38091 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_default_blend_time = 0.2
 anims/idle = ExtResource( 2 )
 anims/walk = ExtResource( 3 )
 
 [node name="leg2" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -12.134, 58.076 )
 rotation = 1.91986
@@ -33,6 +35,7 @@ scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
 [node name="arm2" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 7.849, 13.874 )
 rotation = 0.785398
@@ -40,11 +43,13 @@ scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
 [node name="body" type="Sprite" parent="."]
+visible = false
 position = Vector2( -6.95811, 12.0683 )
 scale = Vector2( 0.251002, 0.285138 )
 texture = ExtResource( 5 )
 
 [node name="arm" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -15.8771, 13.7432 )
 rotation = 2.44346
@@ -52,36 +57,48 @@ scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
 [node name="leg" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1.05901, 58.076 )
 rotation = 1.22173
 scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
-[node name="rev_leg" type="Sprite" parent="."]
+[node name="rev_leg2" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -12.134, -30.076 )
-rotation = 1.22173
+position = Vector2( 0.716, -20.076 )
+rotation = 1.91986
 scale = Vector2( 0.136, 0.029 )
 texture = ExtResource( 4 )
 
 [node name="rev_arm" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -3, 20 )
-rotation = 1.57079
+position = Vector2( -15.877, 18 )
+rotation = 0.785398
 scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
+
+[node name="rev_body" type="Sprite" parent="."]
+position = Vector2( -6.958, 30.068 )
+scale = Vector2( 0.251002, 0.285138 )
+texture = ExtResource( 5 )
+flip_v = true
 
 [node name="rev_arm2" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -3, 20 )
-rotation = 1.57079
+position = Vector2( 10.439, 18 )
+rotation = 2.44346
 scale = Vector2( 0.135975, 0.0292158 )
 texture = ExtResource( 4 )
 
-[node name="rev_leg2" type="Sprite" parent="."]
+[node name="rev_leg" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 0.716, -30.076 )
-rotation = 1.91986
+position = Vector2( -12.134, -20.076 )
+rotation = 1.22173
 scale = Vector2( 0.136, 0.029 )
 texture = ExtResource( 4 )
+
+[node name="Grav_flip" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="timeout" from="Grav_flip" to="." method="_on_Grav_flip_timeout"]
