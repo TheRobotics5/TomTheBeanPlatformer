@@ -68,3 +68,6 @@ func _physics_process(delta):
 			grav = 8
 
 	motion = move_and_slide(motion, UP)
+
+func _on_Level_Border_area_exited(area):
+	get_tree().reload_current_scene()
