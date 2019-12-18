@@ -1,12 +1,15 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-var grav : float = 1.5
+var grav : float = 3.5
 var walk_speed : int = 250
+var respawnPoint
 
 const UP = Vector2(0 , -1)
 
 func _ready():
+	respawnPoint = global_transform
+
 	$rev_leg.hide()
 	$rev_leg2.hide()
 	$rev_arm.hide()
@@ -66,8 +69,8 @@ func _physics_process(delta):
 			$rev_arm.hide()
 			$rev_arm2.hide()
 			grav = 8
-
 	motion = move_and_slide(motion, UP)
 
-func _on_Level_Border_area_exited(area):
-	get_tree().reload_current_scene()
+func _on_Limits_area_exited(area):
+	print ("died")
+	global_transform = respawnPoint
