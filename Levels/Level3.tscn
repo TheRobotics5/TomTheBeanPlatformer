@@ -5,7 +5,7 @@
 [ext_resource path="res://Scene Assets/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene Assets/TinCan.tscn" type="PackedScene" id=4]
 
-[node name="Level1" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

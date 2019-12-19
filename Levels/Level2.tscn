@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1400, 1000 )
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 position = Vector2( -352, -288 )
 
 [node name="TileMap2" type="TileMap" parent="."]
