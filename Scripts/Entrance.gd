@@ -1,9 +1,9 @@
 extends Area2D
 
 var scenename : String = "none"
+var win = 0
 
-var win = preload("res://Scripts/win_var.gd")
-
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
@@ -11,7 +11,6 @@ func _physics_process(delta):
 			scenename = get_tree().get_current_scene().get_name()
 			print (scenename)
 			$"../AnimationPlayer".play("entered")
-			$"../AnimationPlayer".queue("none")
 			$"../Animation".start()
 			win = 1
 

@@ -93,8 +93,9 @@ scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
 [node name="Lid" type="Sprite" parent="."]
-rotation = -1.5708
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( -5, 5 )
+rotation = -0.20944
+scale = Vector2( -0.75, 0.75 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
