@@ -9,7 +9,6 @@ func _physics_process(delta):
 	for body in bodies:
 		if body.name == "Player":
 			scenename = get_tree().get_current_scene().get_name()
-			print (scenename)
 			$"../AnimationPlayer".play("entered")
 			$"../Animation".start()
 			win = 1
