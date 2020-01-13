@@ -7,6 +7,13 @@
 
 [node name="Level1" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -800.006
+margin_top = -1146.7
+margin_right = 2199.99
+margin_bottom = 1853.3
+color = Color( 0, 0, 0, 1 )
+
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
@@ -34,6 +41,8 @@ drag_margin_bottom = 0.3
 
 [node name="TinCan" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1120, 192 )
-[connection signal="area_entered" from="TinCan/Entrance" to="Player" method="_on_Entrance_area_entered"]
+
+[node name="Camera2D" type="Camera2D" parent="TinCan/Entrance" index="1"]
+[connection signal="body_entered" from="TinCan/Entrance" to="Player" method="_on_Entrance_body_entered"]
 
 [editable path="TinCan"]

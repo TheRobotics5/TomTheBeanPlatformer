@@ -103,5 +103,6 @@ anims/entered = ExtResource( 4 )
 anims/none = SubResource( 3 )
 
 [node name="Animation" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 [connection signal="timeout" from="Animation" to="Entrance" method="_on_Animation_timeout"]
