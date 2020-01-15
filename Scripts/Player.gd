@@ -76,13 +76,40 @@ func _physics_process(delta):
 				grav = 8
 		motion = move_and_slide(motion, UP)
 
-# warning-ignore:unused_argument
-func _on_Limits_area_exited(area):
-	print ("died")
-	global_transform = respawnPoint
-
-
 func _on_Entrance_body_entered(body):
 	if (body.get_name() == "Player"):
 		queue_free()
 		win = 1
+
+func _on_Limits_body_exited(body):
+	print ("died")
+	global_transform = respawnPoint
+	motion.y = -walk_speed
+	$body.show()
+	$leg.show()
+	$leg2.show()
+	$arm.show()
+	$arm2.show()
+	$rev_body.hide()
+	$rev_leg.hide()
+	$rev_leg2.hide()
+	$rev_arm.hide()
+	$rev_arm2.hide()
+	grav = 8
+
+
+func _on_Debris_body_entered(body):
+	print ("died")
+	global_transform = respawnPoint
+	motion.y = -walk_speed
+	$body.show()
+	$leg.show()
+	$leg2.show()
+	$arm.show()
+	$arm2.show()
+	$rev_body.hide()
+	$rev_leg.hide()
+	$rev_leg2.hide()
+	$rev_arm.hide()
+	$rev_arm2.hide()
+	grav = 8

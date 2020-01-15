@@ -19,3 +19,5 @@ func _on_Animation_timeout():
 		get_tree().change_scene("res://Levels/Level2.tscn")
 	if scenename == "Level2":
 		get_tree().change_scene("res://Levels/Level3.tscn")
+	if scenename == "Level3":
+		get_tree().change_scene("res://Levels/Level4.tscn")
