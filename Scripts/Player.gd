@@ -113,3 +113,4 @@ func _on_Debris_body_entered(body):
 	$rev_arm.hide()
 	$rev_arm2.hide()
 	grav = 8
+	

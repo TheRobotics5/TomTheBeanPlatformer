@@ -30,7 +30,6 @@ tile_data = PoolIntArray( -458724, 0, 1, -458723, 0, 65536, -458722, 0, 65536, -
 position = Vector2( 358.65, 258.778 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 56.67, 0 )
 current = true
 process_mode = 0
 limit_smoothed = true
@@ -48,10 +47,9 @@ rotation = 1.5708
 [node name="Camera2D" type="Camera2D" parent="TinCan/Entrance" index="1"]
 
 [node name="Limits" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1663.16, 437.272 )
+position = Vector2( 1585.73, 421.785 )
+scale = Vector2( 1.15327, 0.682635 )
 [connection signal="body_entered" from="TinCan/Entrance" to="Player" method="_on_Entrance_body_entered"]
 [connection signal="body_exited" from="Limits" to="Player" method="_on_Limits_body_exited"]
 
 [editable path="TinCan"]
-
-[editable path="Limits"]

@@ -29,7 +29,6 @@ tile_data = PoolIntArray( -262136, 0, 1, -262135, 0, 65536, -262134, 0, 65536, -
 position = Vector2( 348.325, 321.114 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 56.67, 0 )
 current = true
 process_mode = 0
 limit_smoothed = true

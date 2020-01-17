@@ -4,11 +4,12 @@
 [ext_resource path="res://Scene Assets/Terrain.tres" type="TileSet" id=2]
 [ext_resource path="res://Scene Assets/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene Assets/TinCan.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scene Assets/Limits.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scene Assets/Debris.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene Assets/DebrisV.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Level3" type="Node2D"]
-position = Vector2( 0.735077, -16.172 )
+position = Vector2( -0.431549, 0.0186043 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -203.844
@@ -32,7 +33,6 @@ tile_data = PoolIntArray( -983021, 0, 1, -983020, 0, 2, -917487, 0, 1, -917486, 
 position = Vector2( 1645.08, 1207.47 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 56.67, 0 )
 current = true
 process_mode = 0
 limit_smoothed = true
@@ -50,15 +50,23 @@ rotation = 4.71239
 
 [node name="Camera2D" type="Camera2D" parent="TinCan/Entrance" index="1"]
 
-[node name="Limits" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1663.16, 437.272 )
+[node name="Debris" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1958.49, 1338.67 )
 
-[node name="Debris" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1831.7, 1218.21 )
+[node name="Limits" type="Area2D" parent="."]
+position = Vector2( 1965.46, 469.745 )
+scale = Vector2( 150, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
+shape = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 [connection signal="body_entered" from="TinCan/Entrance" to="Player" method="_on_Entrance_body_entered"]
+[connection signal="body_entered" from="Debris/Area2D" to="Player" method="_on_Debris_body_entered"]
 [connection signal="body_exited" from="Limits" to="Player" method="_on_Limits_body_exited"]
-[connection signal="body_entered" from="Debris" to="Player" method="_on_Debris_body_entered"]
 
 [editable path="TinCan"]
 
-[editable path="Limits"]
+[editable path="Debris"]
