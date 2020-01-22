@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scene Assets/Background.tres" type="TileSet" id=1]
+[ext_resource path="res://Sprites/background_tile.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene Assets/Terrain.tres" type="TileSet" id=2]
 [ext_resource path="res://Scene Assets/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene Assets/TinCan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scene Assets/DebrisV.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Level3" type="Node2D"]
 position = Vector2( -0.431549, 0.0186043 )
@@ -58,7 +58,7 @@ position = Vector2( 1965.46, 469.745 )
 scale = Vector2( 150, 160 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

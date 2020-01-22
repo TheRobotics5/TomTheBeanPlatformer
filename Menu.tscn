@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Quit.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Level Select.gd" type="Script" id=2]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -9,9 +12,115 @@ margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
 
+[node name="Quit" type="Button" parent="."]
+margin_left = 400.0
+margin_top = 569.302
+margin_right = 570.0
+margin_bottom = 649.302
+text = "Quit"
+script = ExtResource( 1 )
+
 [node name="Level Select" type="Button" parent="."]
 margin_left = 730.0
 margin_top = 570.0
 margin_right = 900.0
 margin_bottom = 650.0
 text = "Level Select"
+script = ExtResource( 2 )
+
+[node name="b1" type="Button" parent="Level Select"]
+visible = false
+margin_left = -330.0
+margin_top = -400.0
+margin_right = -160.0
+margin_bottom = -321.0
+text = "Level 1"
+
+[node name="b2" type="Button" parent="Level Select"]
+visible = false
+margin_top = -400.0
+margin_right = 170.0
+margin_bottom = -321.0
+text = "Level 2"
+
+[node name="b3" type="Button" parent="Level Select"]
+visible = false
+margin_left = -330.0
+margin_top = -300.0
+margin_right = -160.0
+margin_bottom = -221.0
+text = "Level 3"
+
+[node name="b4" type="Button" parent="Level Select"]
+visible = false
+margin_top = -300.0
+margin_right = 170.0
+margin_bottom = -221.0
+text = "Level 4"
+
+[node name="b5" type="Button" parent="Level Select"]
+visible = false
+margin_left = -330.0
+margin_top = -200.0
+margin_right = -160.0
+margin_bottom = -121.0
+text = "Level 5"
+
+[node name="b6" type="Button" parent="Level Select"]
+visible = false
+margin_top = -200.0
+margin_right = 170.0
+margin_bottom = -121.0
+text = "Level 6"
+
+[node name="b7" type="Button" parent="Level Select"]
+visible = false
+margin_left = -330.0
+margin_top = -100.0
+margin_right = -160.0
+margin_bottom = -21.0
+text = "Level 7"
+
+[node name="b8" type="Button" parent="Level Select"]
+visible = false
+margin_top = -100.0
+margin_right = 170.0
+margin_bottom = -21.0
+text = "Level 8"
+
+[node name="Next page" type="Button" parent="Level Select"]
+visible = false
+margin_right = 170.0
+margin_bottom = 80.0
+text = "Next Page -->"
+
+[node name="Back" type="Button" parent="Level Select"]
+visible = false
+margin_left = -330.0
+margin_top = -0.697998
+margin_right = -160.0
+margin_bottom = 79.302
+text = "Go back"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 570.0
+margin_top = 250.0
+margin_right = 730.0
+margin_bottom = 400.0
+mouse_default_cursor_shape = 3
+text = "Start"
+[connection signal="pressed" from="Quit" to="Quit" method="_on_Quit_pressed"]
+[connection signal="pressed" from="Level Select" to="Level Select" method="_on_Level_Select_pressed"]
+[connection signal="pressed" from="Level Select/b1" to="Level Select" method="_on_b1_pressed"]
+[connection signal="pressed" from="Level Select/b2" to="Level Select" method="_on_b2_pressed"]
+[connection signal="pressed" from="Level Select/b3" to="Level Select" method="_on_b3_pressed"]
+[connection signal="pressed" from="Level Select/b4" to="Level Select" method="_on_b4_pressed"]
+[connection signal="pressed" from="Level Select/b5" to="Level Select" method="_on_b5_pressed"]
+[connection signal="pressed" from="Level Select/b6" to="Level Select" method="_on_b6_pressed"]
+[connection signal="pressed" from="Level Select/b7" to="Level Select" method="_on_b7_pressed"]
+[connection signal="pressed" from="Level Select/b8" to="Level Select" method="_on_b8_pressed"]
+[connection signal="pressed" from="Level Select/Back" to="Level Select" method="_on_Back_pressed"]
