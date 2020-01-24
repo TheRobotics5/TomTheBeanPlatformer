@@ -28,6 +28,13 @@ margin_bottom = 650.0
 text = "Level Select"
 script = ExtResource( 2 )
 
+[node name="Start" type="Button" parent="Level Select"]
+margin_left = -160.0
+margin_top = -320.0
+margin_bottom = -170.0
+mouse_default_cursor_shape = 3
+text = "Start"
+
 [node name="b1" type="Button" parent="Level Select"]
 visible = false
 margin_left = -330.0
@@ -105,14 +112,6 @@ text = "Go back"
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
-
-[node name="Button" type="Button" parent="."]
-margin_left = 570.0
-margin_top = 250.0
-margin_right = 730.0
-margin_bottom = 400.0
-mouse_default_cursor_shape = 3
-text = "Start"
 [connection signal="pressed" from="Quit" to="Quit" method="_on_Quit_pressed"]
 [connection signal="pressed" from="Level Select" to="Level Select" method="_on_Level_Select_pressed"]
 [connection signal="pressed" from="Level Select/b1" to="Level Select" method="_on_b1_pressed"]

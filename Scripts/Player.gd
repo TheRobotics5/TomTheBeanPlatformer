@@ -98,10 +98,9 @@ func _on_Limits_body_exited(body):
 	grav = 8
 
 
-func _on_Debris_body_entered(body):
-	print ("died")
+func _on_Area2D_debris_col():
+	print ("hit")
 	global_transform = respawnPoint
-	motion.y = -walk_speed
 	$body.show()
 	$leg.show()
 	$leg2.show()
@@ -113,4 +112,4 @@ func _on_Debris_body_entered(body):
 	$rev_arm.hide()
 	$rev_arm2.hide()
 	grav = 8
-	
+

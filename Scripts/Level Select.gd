@@ -5,6 +5,7 @@ func _ready():
 
 
 func _on_Level_Select_pressed():
+	$Start.hide()
 	$b1.show()
 	$b2.show()
 	$b3.show()
@@ -18,6 +19,7 @@ func _on_Level_Select_pressed():
 
 
 func _on_Back_pressed():
+	$Start.show()
 	$b1.hide()
 	$b2.hide()
 	$b3.hide()
