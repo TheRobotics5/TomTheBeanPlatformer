@@ -3,6 +3,7 @@ extends KinematicBody2D
 var falling = true
 var motion = Vector2()
 var spawnPoint = Vector2()
+signal hit
 
 func _ready():
 	spawnPoint = global_transform
@@ -19,3 +20,7 @@ func _physics_process(delta):
 func _on_Falling_timeout():
 	falling = false
 	$Falling.start()
+
+
+func _on_AreaDebris_collided():
+	emit_signal("hit")

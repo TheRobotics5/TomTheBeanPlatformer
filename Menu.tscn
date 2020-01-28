@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Quit.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Level Select.gd" type="Script" id=2]
+[ext_resource path="res://Start.gd" type="Script" id=3]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -21,6 +22,7 @@ text = "Quit"
 script = ExtResource( 1 )
 
 [node name="Level Select" type="Button" parent="."]
+editor/display_folded = true
 margin_left = 730.0
 margin_top = 570.0
 margin_right = 900.0
@@ -34,6 +36,7 @@ margin_top = -320.0
 margin_bottom = -170.0
 mouse_default_cursor_shape = 3
 text = "Start"
+script = ExtResource( 3 )
 
 [node name="b1" type="Button" parent="Level Select"]
 visible = false
@@ -114,6 +117,7 @@ anchor_mode = 0
 current = true
 [connection signal="pressed" from="Quit" to="Quit" method="_on_Quit_pressed"]
 [connection signal="pressed" from="Level Select" to="Level Select" method="_on_Level_Select_pressed"]
+[connection signal="pressed" from="Level Select/Start" to="Level Select/Start" method="_on_Start_pressed"]
 [connection signal="pressed" from="Level Select/b1" to="Level Select" method="_on_b1_pressed"]
 [connection signal="pressed" from="Level Select/b2" to="Level Select" method="_on_b2_pressed"]
 [connection signal="pressed" from="Level Select/b3" to="Level Select" method="_on_b3_pressed"]

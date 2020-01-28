@@ -70,17 +70,14 @@ editor/display_folded = true
 position = Vector2( 1958.49, 1338.67 )
 
 [node name="DebrisF1" parent="." instance=ExtResource( 6 )]
-position = Vector2( -119.872, -933.184 )
+position = Vector2( 235.945, -763.751 )
 
 [node name="DebrisH1" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1206.31, 1158.24 )
+position = Vector2( 1120.01, -33.3794 )
 [connection signal="body_entered" from="TinCan/Entrance" to="Player" method="_on_Entrance_body_entered"]
 [connection signal="body_exited" from="Limits" to="Player" method="_on_Limits_body_exited"]
+[connection signal="hit" from="DebrisV1" to="Player" method="_on_Debris_hit"]
+[connection signal="hit" from="DebrisF1" to="Player" method="_on_Debris_hit"]
+[connection signal="hit" from="DebrisH1" to="Player" method="_on_Debris_hit"]
 
 [editable path="TinCan"]
-
-[editable path="DebrisV1"]
-
-[editable path="DebrisF1"]
-
-[editable path="DebrisH1"]

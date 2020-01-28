@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var right = true
 var motion = Vector2()
+signal hit
 
 func _ready():
 	$AnimationPlayer.play("Horiz")
@@ -19,3 +20,6 @@ func _on_Right_timeout():
 	else:
 		right = true
 	$Right.start()
+
+func _on_AreaDebris_collided():
+	emit_signal("hit")

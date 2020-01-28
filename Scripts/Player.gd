@@ -82,23 +82,24 @@ func _on_Entrance_body_entered(body):
 		win = 1
 
 func _on_Limits_body_exited(body):
-	print ("died")
-	global_transform = respawnPoint
-	motion.y = -walk_speed
-	$body.show()
-	$leg.show()
-	$leg2.show()
-	$arm.show()
-	$arm2.show()
-	$rev_body.hide()
-	$rev_leg.hide()
-	$rev_leg2.hide()
-	$rev_arm.hide()
-	$rev_arm2.hide()
-	grav = 8
+	if body.name == "Player":
+		print ("exited")
+		global_transform = respawnPoint
+		motion.y = 0.1
+		$body.show()
+		$leg.show()
+		$leg2.show()
+		$arm.show()
+		$arm2.show()
+		$rev_body.hide()
+		$rev_leg.hide()
+		$rev_leg2.hide()
+		$rev_arm.hide()
+		$rev_arm2.hide()
+		grav = 8
 
 
-func _on_Area2D_debris_col():
+func _on_Debris_hit():
 	print ("hit")
 	global_transform = respawnPoint
 	$body.show()
@@ -112,4 +113,3 @@ func _on_Area2D_debris_col():
 	$rev_arm.hide()
 	$rev_arm2.hide()
 	grav = 8
-

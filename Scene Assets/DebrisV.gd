@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var up = true
 var motion = Vector2()
+signal hit
 
 func _ready():
 	$AnimationPlayer.play("Vert")
@@ -19,3 +20,6 @@ func _on_Up_timeout():
 	else:
 		up = true
 	$Up.start()
+
+func _on_AreaDebris_collided():
+	emit_signal("hit")
